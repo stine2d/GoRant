@@ -1,0 +1,122 @@
+body{
+    background: rgb(140,82,255);
+    background: linear-gradient(90deg, rgba(140,82,255,1) 0%, rgba(92,225,230,1) 100%);    
+    font-family: "League Spartan", sans-serif;
+    font-weight: 400;
+    font-style: normal; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+
+    header{
+        height: 15vh;
+        padding-bottom: 10vh;
+    }
+    
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    #logo {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    main {
+        flex: 1;
+        justify-content: space-around !important;
+        height: 50vh;
+        max-width: 70%;
+        text-align: center;
+
+    }
+
+    #prevTopics{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #logo-hero{
+        font-family: "League Spartan", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        color: #ffff00;
+    }
+    
+    form{
+        display: inline-flex;
+        flex-direction: row;
+        align-items: first baseline;
+    }
+
+    input, textarea{
+        margin: 10px; 
+        outline-color: #ffff00;
+        outline-width: 2px;
+        border-radius: 5px;
+        font-family: "League Spartan", sans-serif;
+        font-weight: 100;
+        font-style: italic;
+        padding: 5px;
+    }
+
+    textarea{
+        width: 350px;
+        height: 150px;
+        resize: none;
+    }
+
+    .form-button{
+        background-color: #ffff00;
+        outline-color: black;
+        font-weight: 400;
+        margin: 10px; 
+        outline-color: #ffff00;
+        outline-width: 2px;
+        border-radius: 5px;
+        font-family: "League Spartan", sans-serif;
+        max-height: 38px;
+        padding: 5px;
+        min-width: 45px;
+
+    }
+
+    .italic{
+        font-style: italic;
+    }
+
+    #make-a-post{
+        width: 150px;
+        height: 80px;
+    }
+
+    .flex-row{
+        display: flex;
+        flex-direction: row !important;
+        justify-content: center;
+    }
+
+    footer{
+        height: 15vh;
+        padding-top: 10vh;
+    }
+
+};
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+<%- include("partials/header.ejs") %>
+
+<!-- hero section -->
+<div class="container">
+    <h1>
+        You got us on the edge of our seat! 
+    </h1>
+
+    <h2>
+        Can't wait to hear what you have to say...
+    </h2>   
+</div>
+
+<!-- form for writing blogpost -->
+<form action="/new" method="POST">
+
+    <div id="inputs-left" class="container">
+        <input class="shortform"type="text" name="title" placeholder="Give It A Title">
+        <input class="shortform" type="text" name="author" placeholder="Written By">        
+    </div>
+
+    <textarea name="content" placeholder="I'm gonna spill the beans about..."></textarea>
+    
+    <div id="inputs-right" class="container">
+        <input class="form-button" type="submit" value="Done">
+        
+</form>
+    
+    <!-- failed button to make a quick return to home without writing a post -->
+        <!-- <button href="./index.ejs" class="form-button">
+            Back
+        </button>
+    </div> -->
+
+
+
+<%- include('partials/footer.ejs') %>

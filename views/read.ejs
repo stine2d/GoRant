@@ -1,0 +1,39 @@
+<%- include("partials/header.ejs") %>
+
+<!-- the selected post -->
+<div class="container">
+    <h1>
+        <%= post.title %>
+    </h1>
+
+    <p class="italic"> 
+        by <%= post.author%> 
+    </p>
+    </hr>
+    <p>
+        <%= post.content %>
+    </p>
+</div>
+
+<!-- button navigation menu -->
+<div class="flex-row" class="container">
+    <form action="/edit/<%= id%>" method="GET">
+        <button class="form-button"> 
+            Edit 
+        </button>
+    </form>
+    <br>
+    <form action="/delete/<%= id%>" method="POST">
+        <button class="form-button">
+            Delete
+        </button>
+    </form>
+    <br>
+    <form action="/" method="GET">
+        <button class="form-button">
+            Back to Home
+        </button>
+    </form>
+</div>
+
+<%- include('partials/footer.ejs') %>

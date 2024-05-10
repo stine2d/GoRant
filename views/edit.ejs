@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs") %>
+
+<!-- hero section -->
+<div id="catchphrase" class="container">
+    <h1>Found better words? Forgot to mention something?</h1>
+    <p> All good, this isn't twitter - we've got you covered. Edit away!</p>
+</div>
+
+<!-- form to edit selected post -->
+<div id="editor">
+    <form action="/edit/<%= id %>" method="POST">
+        <input type="hidden" name="author" value="<%= post.author %>">
+        <input type="text" name="title" value="<%= post.title %>">
+        <textarea name="content"> <%= post.content %> </textarea>
+        <input class="form-button" type="submit" value="Save Changes">
+    </form>
+</div>
+
+
+<%- include("partials/footer.ejs") %>

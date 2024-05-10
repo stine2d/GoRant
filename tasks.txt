@@ -1,0 +1,114 @@
+
+to fix:
+- styling
+    . center hero
+    . find a way to make logo work
+    . apply styling to ALL views
+    . size textfields
+    . style buttons
+
+- bugs
+    . editing a post makes it forget the author
+
+
+
+
+
+
+list w titles CHECK!
+
+which link to full view of post
+an event listener on the title list items, <span> could be helpful?
+on click it should: 
+    toggle open a wide side bar that lets user read the post at comfortable size 
+        thats gonna be mostly css work
+    sidebar also includes buttons to let you edit or delete
+    edit leads to /editor
+
+/editor has button for resubmit, delete and Go back. all of which loop to index/submit
+
+edit: submit input form but with placeholders that show properities of chosen object(blogpost)?
+
+
+
+junkyard:
+
+<hr>
+
+<div id="sidebar" class="hidden">
+
+
+    <p>this will be the hidden sidebar</p>
+    
+    <button href="editor.ejs">Edit</button>
+
+    <form action="/submit" method="DELETE">
+        <button type="submit" value="Delete">Delete</button>
+    </form>
+
+    <button class="collapse">Close</button>  
+
+
+    <% if(locals.blogpostsAll){ %>
+    <h2>
+        <%= blogpostsAll[0].title %>
+    </h2> 
+    <p>
+        <%= blogpostsAll[0].post %>
+    </p>
+    <p>
+        by <%= blogpostsAll[0].author %>
+    </p>
+    <% } %>
+
+</div>
+
+<hr>
+
+<div id="prevTopics">
+        <% if (locals.blogpostsAll) { %>
+            <h2> Previous Topics </h2>
+            <ul>
+                <% blogpostsAll.forEach((blogpost) => { %>
+                <li>
+                    <a href="/edit/<%= index %>"> <%= blogpost.title%> </a>
+                </li>
+                <% }) %>
+            </ul>
+            
+            <% } else { %>
+            <p> Nothing to see here YET </p>
+            <% } %>
+</div>
+
+
+<ul>
+            
+            <% for (let i = 0; i < titlesAll.length; i++) { %>
+            <li>
+                <form action="/read" method="GET">
+                    <%= titlesAll[i] %>
+                </form>
+
+            
+            </li>      
+            <% } %>
+
+var titleItems = app.getElementById("li");
+
+function openSideBar(){ 
+  titleItems.classList.remove("hidden");
+};
+
+titleItems.addEventListener(
+  "click", 
+  openSideBar(),
+  alert("Ive been clicked!")
+);
+
+/*window.onload = function(){
+  jQuery("li").on("click", function() {
+      alert("i been clicked sir");
+  });  
+};*/
+

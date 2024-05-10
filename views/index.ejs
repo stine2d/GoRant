@@ -1,0 +1,41 @@
+<%- include('partials/header.ejs') %>
+
+
+    <!-- hero section  -->
+    <div id="hero" class="container">
+        <h1 class="league-spartan">
+            The People Deserve To Know!
+        </h1>
+        <p class="league-spartan">
+            There is something on your mind that you cannot get rid of? Tell them all about what's been bugging you!         
+        </p>
+        <p class="league-spartan">
+            <span id="logo-hero">GoRant</span> and clear your head    
+        </p>
+    </div>
+    
+    <!-- button to make new post -->
+    <form action="/new" method="GET">
+        <button id="make-a-post" class="form-button">
+            Blow Off Some Steam
+        </button>
+    </form>
+  
+    <!-- placeholder section that will fill with previous posts -->
+    <div id="prevTopics" class="container">
+        <p>Previous rants: <p>
+        <ul>
+            <% blogpostsAll.forEach((post, index) => { %>
+            <li>
+                <a href="/read/<%= index %>"><%= post.title %></a>
+            </li>
+                <% }) %>
+        </ul>
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+<script src="../index.js"></script>
+
+<%- include('partials/footer.ejs') %>
